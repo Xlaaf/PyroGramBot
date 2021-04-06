@@ -18,7 +18,7 @@ from pyrobot.helper_functions.cust_p_filters import f_onw_fliter
 async def who_is(client, message):
     """ extract user information """
     status_message = await message.reply_text(
-        "🤔😳😳🙄"
+        "bentar kakak lagi loading"
     )
     from_user = None
     from_user_id, _ = extract_user(message)
@@ -35,13 +35,13 @@ async def who_is(client, message):
     else:
         message_out_str = ""
         message_out_str += f"ID: <code>{from_user.id}</code>\n"
-        message_out_str += "First Name: "
+        message_out_str += "Nama: "
         message_out_str += f"<a href='tg://user?id={from_user.id}'>"
         message_out_str += from_user.first_name or ""
         message_out_str += "</a>\n"
         last_name = from_user.last_name or ""
-        message_out_str += f"Last Name: {last_name}\n"
-        dc_id = from_user.dc_id or "[🙏 no profile photo 👀]"
+        message_out_str += f"Nama akhir: {last_name}\n"
+        dc_id = from_user.dc_id or "[ga ada poto propil]"
         message_out_str += f"DC ID: <code>{dc_id}</code>\n"
         if message.chat.type in (("supergroup", "channel")):
             try:
@@ -50,7 +50,7 @@ async def who_is(client, message):
                     chat_member_p.joined_date or time.time()
                 ).strftime("%Y.%m.%d %H:%M:%S")
                 message_out_str += (
-                    "<b>Joined On</b>: <code>"
+                    "<b>Main tele sudah</b>: <code>"
                     f"{joined_date}"
                     "</code>\n"
                 )
